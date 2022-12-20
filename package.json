@@ -1,0 +1,6 @@
+{
+    "name": "99bank-func--extract-pboml-from-pdf--extraction-pboml-de-pdf",
+    "dependencies": {
+        "pdf-lib": "^1.17.1"
+    }
+}
