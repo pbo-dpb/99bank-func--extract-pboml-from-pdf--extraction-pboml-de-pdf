@@ -10,5 +10,7 @@ async function readDocumentMetadata(body) {
 
 exports.handler = async function (event, context) {
 
-    return await readDocumentMetadata(event.body);
+    const pdfArrayBuffer = Buffer.from(event.body, 'base64');
+
+    return await readDocumentMetadata(pdfArrayBuffer);
 }
