@@ -8,12 +8,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '18'
-      - run: npm install
-      - run: rm -rf .git
-      - run: rm -rf .github
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r dist.zip ./
+      - run: npm ci && npm run build && npm run export
       - name: Deploy to Lambda
         uses: appleboy/lambda-action@master
         with:
@@ -21,4 +16,4 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ca-central-1
           function_name: 99bank-func--extract-pboml-from-pdf--extraction-pboml-de-pdf
-          zip_file: dist.zip
+          zip_file: build/index.js.zip
