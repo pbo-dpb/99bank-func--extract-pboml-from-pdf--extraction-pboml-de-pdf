@@ -18,6 +18,5 @@ jobs:
           aws_access_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ca-central-1
-          function_name: ${{ secrets.AWS_LAMBDA_FUNCTION_NAME }}
+          function_name: 99bank-func--extract-pboml-from-pdf--extraction-pboml-de-pdf
           zip_file: dist.zip
-          runtime: nodejs18.x
